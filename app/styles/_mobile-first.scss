@@ -1,0 +1,227 @@
+body {
+    //width: 100%;//1900px;
+    // background: rgba(0, 0, 0, 0.3);
+    background-image: url('../images/bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+main {
+    margin: 0 auto;
+    padding-top: resp(125px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), url('../images/phones.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0 0.4em;
+}
+footer {
+    margin: 0 auto;
+    margin-top: resp(127px); //127px;
+    padding: 0 0.4em;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+.branding {
+    margin-top: 2em; //93px;
+    margin-bottom: 0;
+    font-size: 1em;
+}
+.branding a {
+    color: transparent;
+    display: block;
+    height: resp(27px); //27px;
+    width: 80%; //160px;
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: resp(30px); //30px;
+    margin-left: resp(3px); //3px;
+    line-height: resp(35px); //35px;
+    vertical-align: middle;
+}
+.branding em {
+    color: #cdcdcd;
+    font-size: resp(13px); //13px;
+    font-style: normal;
+    display: block;
+}
+.hero {
+    font-size: resp(47px); //94px;
+    margin-top: resp(52px, 47px); //104px;
+    margin-bottom: 0;
+    font-family: 'Miso', sans-serif;
+    font-weight: 200;
+    letter-spacing: resp(12px, 47px); //12px;
+    text-transform: uppercase;
+    width: 100%; //460px;
+    line-height: 1em; //74px;
+}
+.hero em {
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: resp(12px, 47px); //12px
+}
+.desc {
+    margin-top: resp(29px, 20px); //58px;
+    font-size: resp(20px); //17px
+    font-weight: 300;
+    line-height: 24/20; //24px;
+}
+.social {
+    margin-top: resp(102px); //102px;
+}
+.social-button {
+    display: inline-block;
+    padding: resp(11px, 14px); //11px;
+    border-radius: resp(3px, 14px); //3px;
+    height: resp(32px, 14px); //32px;
+    width: resp(72px, 14px); //72px;
+    font-weight: bold;
+    font-size: resp(14px); //14px;
+    line-height: (11/14); //11px;
+    color: white;
+    vertical-align: bottom;
+    text-align: center;
+}
+.social-button + .social-button {
+    margin-left: resp(24px, 14px); //24px;
+}
+.social-button span {
+    position: relative;
+    display: block;
+    background: white;
+    top: resp(-80px, 17px); //-80px;
+    color: #576881;
+    width: resp(70px, 17px); //70px;
+    height: resp(39px, 17px); //39px;
+    left: resp(-10px, 17px); //-10px;
+    font-size: resp(17px, 14px); //17px;
+    line-height: (34/17); //34px;
+    border-radius: resp(2px, 17px); //2px;
+    box-shadow: 0 resp(1px, 17px) resp(2px, 17px) rgba(0, 0, 0, 0.1); //0 1px 2px rgba(0, 0, 0, 0.1);*/
+    &:after, &:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: resp(8px, 94px) solid transparent; //8px solid transparent;
+        border-top: resp(5px, 94px) solid white; //5px solid white;
+        font-size: resp(94px, 17px); //94px;
+        bottom: resp(-13px, 94px); //-13px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    &:before {
+        border-top: resp(5px, 94px) solid rgba(0, 0, 0, 0.1); //5px solid rgba(0, 0, 0, 0.1);
+        bottom: resp(-14px, 94px); //-14px;
+    }
+}
+.social-button.facebook {
+    background: #3367c7;
+    &:hover {
+        background: lighten(#3367c7, 10%);
+    }
+}
+.social-button.twitter {
+    background: #40a3ff;
+    &:hover {
+        background: lighten(#40a3ff, 10%);
+    }
+}
+.call-to-action {
+    background: #526dd4;
+    color: white;
+    // margin-left: percentage(5/247);//5px;
+    font-size: resp(27px); //27px;
+    width: resp(247px, 27px); //247px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    height: resp(70px, 27px); //70px;
+    border-radius: resp(34px, 27px); //34px;
+    &:hover, &:active {
+        background: #435dcb;
+    }
+    &:active, &:active span {
+        box-shadow: inset 0 resp(2px, 27px) resp(2px, 27px) rgba(0, 0, 0, 0.3); //inset 0px 2px 2px rgba(0,0,0,0.3);
+    }
+}
+.call-to-action span {
+    background-color: #435dcb;
+    width: resp(67px, 27px); //67px;
+    display: inline-block;
+    content: "";
+    padding: resp(17px, 27px); //17px;
+    margin-left: resp(-35px, 27px); //-35px;
+    height: resp(70px, 27px); //70px;
+    background-size: resp(67px, 27px) resp(70px, 27px);
+    vertical-align: middle;
+    margin-top: 0;
+    border-radius: resp(34px, 27px) 0 0 resp(34px, 27px); //34px 0 0 34px;
+    margin-right: resp(18px, 27px); //18px;
+    & svg > * {
+        fill: white;
+    }
+}
+.call-to-action em {
+    font-style: normal;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+}
+.about {
+    margin-top: 5em;
+    display: block;
+    font-size: resp(12px); //12px;
+    padding-left: resp(67px, 12px); //67px;
+    background-size: resp(58px, 12px); //58px;
+    background-position: left top resp(8px, 12px); //left top 8px;
+    text-align:left;
+}
+.about h1 {
+    font-size: resp(18px, 12px); //18px;
+    margin-top: resp(3px, 18px); //3px;
+}
+.about p {
+    margin-top: 0;
+    font-size: resp(14px, 12px); //14px;
+    font-weight: 400;
+    line-height: (17/14); //17px;
+    color: #b8b8b8;
+}
+.share {
+    display: block;
+    text-align: center;
+}
+.share a {
+    // font: 0/0 serif;
+    color: transparent;
+    width: resp(70px); //70px;
+    height: resp(70px); //70px;
+    background-size: resp(70px);
+    display: inline-block;
+    vertical-align: top;
+    & svg {
+        width: resp(70px); //70px;
+        height: resp(70px); //70px;
+    }
+    &.icon-facebook-with-circle svg {
+        width: resp(67px); //67px;
+        height: resp(70px); //70px;
+        & * {
+            fill: #435dcb;
+        }
+    }
+    &.icon-twitter3 svg {
+        width: resp(67px); //67px;
+        height: resp(70px); //70px;
+        & * {
+            fill: #40a3ff;
+        }
+    }
+}
+.share a:hover svg * {
+    fill: #000000;
+}

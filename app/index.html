@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>project</title>
     <meta name="description" content="">
@@ -9,28 +10,65 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
     <!-- endbower -->
     <!-- endbuild -->
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'>
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body>
+    <noscript>
+        <link href="styles/icons.fallback.css" rel="stylesheet">
+    </noscript>
+</head>
+
+<body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <main>
+        <!-- left content -->
+        <!-- logo -->
+        <section>
+            <h1 class="branding"><a class="Logo">Infomatic</a><em>A product of Saturized</em></h1>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-      <li>HTML5 Boilerplate</li>
-      <li>Sass</li>
+            <!-- hero -->
+            <h2 class="hero">Rediscover <em>Yourself</em></h2>
 
-      </ul>
-    </div>
+            <!-- description -->
+            <p class="desc">
+                Infomatic brings all your crucial social stats from Facebook and Twitter, and combines them in one awesome and easy to use app.
+            </p>
+        </section>
+        <!-- social -->
+        <aside class="social">
+            <!-- twitter -->
+            <a class="social-button twitter" href="">Twitter <span>905</span></a>
+            <!-- facebook -->
+            <a class="social-button facebook" href="">Like <span>1.4k</span></a>
+        </aside>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <!-- call to action -->
+        <a href="" class="call-to-action"><span class="icon-chevron-down" data-grunticon-embed></span> Buy <em>$1.99</em></a>
+
+        <section class="about icon-mobile">
+            <h1>Available now on the iPhone App Store</h1>
+            <p>
+                Compatibile with iPhone, iPod touch, and iPad. Requires iOS 5.0 or later. This app is optimized for iPhone 5.
+            </p>
+        </section>
+        <aside class="share">
+            <!-- facebook -->
+            <a href="" class="icon-facebook-with-circle" data-grunticon-embed>Follow us on Facebook</a>
+            <!-- twitter -->
+            <a href="" class="icon-twitter3" data-grunticon-embed>Follow us on Twitter</a>
+        </aside>
+    </footer>
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -38,18 +76,9 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>

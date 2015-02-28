@@ -1,0 +1,21 @@
+.branding {
+    margin-top: resp(93px); //93px;
+}
+.branding a {
+    width: resp(160px); //160px;
+    display: inline-block;
+}
+.branding em {
+    display: inline-block;
+}
+.hero {
+    font-size: resp(94px); //94px;
+    margin-top: resp(104px, 94px); //104px;
+    margin-bottom: 0;
+    letter-spacing: resp(12px, 94px); //12px;
+    width: percentage(460/1000); //460px;
+    line-height: (74/94); //74px;
+}
+.hero em {
+    letter-spacing: resp(12px, 94px); //12px
+}

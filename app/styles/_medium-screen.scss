@@ -1,0 +1,37 @@
+main {
+    padding: 0;
+    width: 95%; //1000px;
+    background-position: center right;
+}
+
+footer {
+    width: 95%; //1000px;
+    margin: 0 auto;
+    margin-top: resp(127px); //127px;
+    padding: 0;
+}
+
+
+.call-to-action {
+    // margin-left: percentage(5/247);//5px;
+    margin: 0;
+    display: inline-block;
+}
+
+.about {
+    margin-top: 0;
+    display: inline-block;
+    width: percentage(490/1000); //490px;
+    vertical-align: top;
+    margin-left: resp(16px,12px); //16px;
+    padding-left: resp(67px,12px); //67px;
+}
+
+.desc {
+    margin-top: resp(58px, 17px); //58px;
+    // margin-left: percentage(6/1000);//6px
+    width: 80%; //460px;
+    font-size: resp(17px); //17px
+    font-weight: 300;
+    line-height: 24/17; //24px;
+}

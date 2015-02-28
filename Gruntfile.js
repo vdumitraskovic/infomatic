@@ -36,13 +36,10 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= config.app %>/scripts/{,*/}*.js'],
+        tasks: ['jshint'],
         options: {
           livereload: true
         }
-      },
-      jstest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['test:watch']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -61,6 +58,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= config.app %>/{,*/}*.html',
+          '.tmp/scripts/{,*/}*.js',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
@@ -81,20 +79,6 @@ module.exports = function (grunt) {
           middleware: function(connect) {
             return [
               connect.static('.tmp'),
-              connect().use('/bower_components', connect.static('./bower_components')),
-              connect.static(config.app)
-            ];
-          }
-        }
-      },
-      test: {
-        options: {
-          open: false,
-          port: 9001,
-          middleware: function(connect) {
-            return [
-              connect.static('.tmp'),
-              connect.static('test'),
               connect().use('/bower_components', connect.static('./bower_components')),
               connect.static(config.app)
             ];
@@ -123,13 +107,25 @@ module.exports = function (grunt) {
       },
       server: '.tmp'
     },
-    
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish'),
+        force: true
+      },
+      all: [
+        'Gruntfile.js',
+        '<%= config.app %>/scripts/{,*/}*.js',
+        '<%= config.app %>/scripts/vendor/*',
+        'test/spec/{,*/}*.js'
+      ]
+    },
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
       options: {
         sourceMap: true,
         includePaths: ['bower_components']
-        },
+      },
       dist: {
         files: [{
           expand: true,
@@ -199,6 +195,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
+      js: '<%= config.app %>/scripts/main.js',
       html: '<%= config.app %>/index.html'
     },
 
@@ -208,11 +205,16 @@ module.exports = function (grunt) {
         assetsDirs: [
           '<%= config.dist %>',
           '<%= config.dist %>/images',
-          '<%= config.dist %>/styles'
-        ]
+          '<%= config.dist %>/styles',
+          '<%= config.dist %>/scripts'
+        ],
+        patterns: {
+          js: [[/(styles\/.*?\.(?:css))/gm, 'Update the JS to reference our revved style']]
+        }
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
-      css: ['<%= config.dist %>/styles/{,*/}*.css']
+      css: ['<%= config.dist %>/styles/{,*/}*.css'],
+      js: ['<%= config.dist %>/scripts/{,*/}*.js']
     },
 
     // The following *-min tasks produce minified files in the dist folder
@@ -226,7 +228,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-
     svgmin: {
       dist: {
         files: [{
@@ -237,7 +238,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-
     htmlmin: {
       dist: {
         options: {
@@ -298,7 +298,9 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'fonts/{,*/}*.*',
+            'styles/icons*css'
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
@@ -318,9 +320,6 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'sass:server',
-        'copy:styles'
-      ],
-      test: [
         'copy:styles'
       ],
       dist: [
@@ -372,6 +371,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'newer:jshint',
     'build'
   ]);
 };

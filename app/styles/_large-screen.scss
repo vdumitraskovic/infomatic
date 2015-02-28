@@ -1,0 +1,35 @@
+main {
+    padding: 0;
+    background-image: url('../images/phones.png');
+    background-position: right percentage(35/1000) bottom; //;right 35px top 140px;
+}
+
+footer {
+    margin: 0 auto;
+    margin-top: resp(127px); //127px;
+    padding: 0;
+}
+
+.desc {
+    width: resp(380px, 17px); //380px
+}
+
+
+.social {
+    margin-top: resp(102px); //102px;
+    // width: percentage(174/1000); //174px;
+    margin-left: percentage(8/1000); //8px;
+}
+
+.share {
+    display: inline-block;
+    vertical-align: top;
+    width: resp(154px, 12px); //154px;
+    height: resp(69px, 12px); //69px;
+    // margin-left: resp(46px,12px);//46px;
+    text-align: right;
+}
+.share a {
+    width: resp(70px); //70px;
+    height: resp(70px); //70px;
+}
